@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Netflix Style Site</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+  <!-- Netflix Intro -->
+  <section id="intro" class="screen active">
+    <h1 class="logo">NETFLIX</h1>
+  </section>
+
+  <!-- Profile Selection -->
+  <section id="profiles" class="screen">
+  <h1 class="title">Who's watching?</h1>
+
+  <div class="profile-container">
+
+    <div class="profile-card" onclick="openSection('games')">
+      <img src="assets/images/profiles/games.jpg" alt="Games">
+      <p>Games</p>
+    </div>
+
+    <div class="profile-card" onclick="openSection('nostalgia')">
+      <img src="assets/images/profiles/nostalgia.jpg" alt="Nostalgia">
+      <p>Nostalgia</p>
+    </div>
+
+    <div class="profile-card" onclick="openSection('goodies')">
+      <img src="assets/images/profiles/goodies.jpg" alt="Goodies">
+      <p>Goodies</p>
+    </div>
+
+  </div>
+</section>
+
+  <!-- Placeholder Sections -->
+  <section id="games" class="screen">
+  <h1 class="title">Games</h1>
+
+  <div class="games-container">
+
+    <div class="game-card" onclick="openGame('quiz')">
+      <img src="assets/images/games/quiz.jpg">
+      <div class="overlay">
+        <h2>Quiz</h2>
+      </div>
+    </div>
+
+    <div class="game-card" onclick="openGame('jigsaw')">
+      <img src="assets/images/games/jigsaw.jpg">
+      <div class="overlay">
+        <h2>Jigsaw</h2>
+      </div>
+    </div>
+
+    <div class="game-card" onclick="openGame('memory')">
+      <img src="assets/images/games/memory.jpg">
+      <div class="overlay">
+        <h2>Memory Match</h2>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Back Button -->
+  <button class="back-btn" onclick="switchScreen('profiles')">← Back</button>
+</section>
+<!-- Quiz Screen -->
+<section id="quiz" class="screen">
+  <h1 class="title">Quiz</h1>
+
+  <div class="quiz-layout">
+
+    <!-- LEFT MEMES -->
+    <div class="meme-side" id="leftMemes"></div>
+
+    <!-- QUIZ -->
+    <div class="quiz-container">
+      <h2 id="question"></h2>
+
+      <div class="options">
+        <button onclick="selectAnswer(0)" id="opt0"></button>
+        <button onclick="selectAnswer(1)" id="opt1"></button>
+        <button onclick="selectAnswer(2)" id="opt2"></button>
+        <button onclick="selectAnswer(3)" id="opt3"></button>
+      </div>
+
+      <button class="next-btn" onclick="nextQuestion()">Next</button>
+      <button class="back-btn" onclick="switchScreen('games')">← Back</button>
+    </div>
+
+    <!-- RIGHT MEMES -->
+    <div class="meme-side" id="rightMemes"></div>
+
+  </div>
+</section>
+<!-- Jigsaw Game -->
+<section id="jigsaw" class="screen">
+  <h1 class="title">Jigsaw Puzzle</h1>
+
+  <div class="jigsaw-container" id="puzzle"></div>
+
+  <button class="back-btn" onclick="switchScreen('games')">← Back</button>
+</section>
+<section id="memory" class="screen">
+  <h1 class="title">Memory Match</h1>
+
+  <div class="memory-container" id="memoryBoard"></div>
+
+  <button class="back-btn" onclick="switchScreen('games')">← Back</button>
+</section>
+  <section id="nostalgia" class="screen">
+  <h1 class="title">Nostalgia</h1>
+
+  <div class="nostalgia-container">
+
+    <div class="nostalgia-card" onclick="openNostalgia('carousel')">
+      <img src="assets/images/nostalgia/carousel.jpg">
+      <div class="overlay"><h2>Memories</h2></div>
+    </div>
+
+    <div class="nostalgia-card" onclick="openNostalgia('music')">
+      <img src="assets/images/nostalgia/music.jpg">
+      <div class="overlay"><h2>Music</h2></div>
+    </div>
+
+    <div class="nostalgia-card" onclick="openNostalgia('comic')">
+      <img src="assets/images/nostalgia/comic.jpg">
+      <div class="overlay"><h2>Digital Comic</h2></div>
+    </div>
+
+  </div>
+
+  <button class="back-btn" onclick="switchScreen('profiles')">← Back</button>
+</section>
+<section id="carousel" class="screen">
+  <h1 class="title">Memories</h1>
+
+  <div class="carousel-wrapper">
+    <div class="carousel-3d" id="carousel3d"></div>
+  </div>
+
+  <button class="back-btn" onclick="switchScreen('nostalgia')">← Back</button>
+</section>
+<section id="comic" class="screen">
+  <h1 class="title">Digital Comic</h1>
+
+  <div class="comic-container">
+    <img id="comicImage" src="">
+  </div>
+
+  <div class="comic-controls">
+    <button onclick="prevPage()">⬅ Prev</button>
+    <button onclick="nextPage()">Next ➡</button>
+  </div>
+
+  <button class="back-btn" onclick="switchScreen('nostalgia')">← Back</button>
+</section>
+  <section id="goodies" class="screen">
+
+  <h1 class="title">Goodies</h1>
+
+  <p class="goodies-note">
+    Read before proceeding ✨
+  </p>
+
+  <div class="goodies-wrapper">
+
+    <!-- FLOWERS -->
+    <div class="goodie-row">
+
+      <div class="floating-note left">
+        Click to open and look at the blooms and notes 🌸
+      </div>
+
+      <div class="goodie-card"
+           onclick="openGoodie('https://digibouquet.vercel.app/bouquet/306248bd-8867-4987-b0fb-1c013761d0cf')">
+
+        <img src="assets/images/goodies/flowers.jpg">
+
+        <div class="overlay">
+          <h2>Bloom Box 🌸</h2>
+        </div>
+      </div>
+
+    </div>
+
+
+
+    <!-- LETTERS -->
+    <div class="goodie-row reverse">
+
+      <div class="floating-note right">
+        Click to open and read the letters waiting for you ✉️
+      </div>
+
+      <div class="goodie-card"
+           onclick="openGoodie('https://openwhenletters.app/c/cc4c1316-e4a3-4fd2-be2d-2fd19ff087c5/v/85492550be3eef5c8938051a3726537ff9b674007a0933e2a88e839762012a3d')">
+
+        <img src="assets/images/goodies/letters.jpg">
+
+        <div class="overlay">
+          <h2>Words ✉️</h2>
+        </div>
+      </div>
+
+    </div>
+
+
+
+    <!-- MAP -->
+    <div class="goodie-row">
+
+      <div class="floating-note left">
+        Click to open.<br><br>
+
+        1.Enter AMOU.<br>
+        2.Search “Ramalingapuram”.<br>
+        3.Select the third option.<br>
+        4.Tap the pink circle 🗺️
+      </div>
+
+      <div class="goodie-card"
+           onclick="openGoodie('https://amapof.us/map')">
+
+        <img src="assets/images/goodies/map.jpg">
+
+        <div class="overlay">
+          <h2>Take a look 🗺️</h2>
+        </div>
+      </div>
+
+    </div>
+
+
+
+    <!-- MUSIC -->
+    <div class="goodie-row reverse">
+
+      <div class="floating-note right">
+        Click the link and read the song names
+        from top to bottom 🎵
+      </div>
+
+      <div class="goodie-card"
+           onclick="openGoodie('https://open.spotify.com/playlist/7nZ7Qk2cAuTWhnvC88YvHW?si=Ay219Ab1SCmRMmBT0-kCUw&pi=as_wm533T2m1N')">
+
+        <img src="assets/images/goodies/music.jpg">
+
+        <div class="overlay">
+          <h2>For you 🎵</h2>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <button class="back-btn"
+          onclick="switchScreen('profiles')">
+    ← Back
+  </button>
+
+</section>
+
+  
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</body>
+</html>
