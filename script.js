@@ -407,8 +407,7 @@ function showMemes(isCorrect) {
 
   const folder = isCorrect ? "correct" : "wrong";
 
-  for (let i = 1; i <= 2; i++) {
-
+  // random images
   const rand1 = Math.floor(Math.random() * 6) + 1;
   const rand2 = Math.floor(Math.random() * 6) + 1;
 
@@ -420,7 +419,6 @@ function showMemes(isCorrect) {
 
   left.appendChild(img1);
   right.appendChild(img2);
-}
 }
 function openNostalgia(type) {
   if (type === "carousel") {

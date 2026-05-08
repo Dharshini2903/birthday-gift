@@ -1198,3 +1198,27 @@ button,
 
   body { overflow-x: hidden; }
 }
+#leftMemes,
+#rightMemes {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 999;
+}
+
+#leftMemes {
+  left: 180px;
+}
+
+#rightMemes {
+  right: 180px;
+}
+
+#leftMemes img,
+#rightMemes img {
+  width: 240px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
