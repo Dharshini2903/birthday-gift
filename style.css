@@ -1207,11 +1207,11 @@ button,
 }
 
 #leftMemes {
-  left: 180px;
+  left: 140px;
 }
 
 #rightMemes {
-  right: 180px;
+  right: 140px;
 }
 
 #leftMemes img,
@@ -1221,4 +1221,26 @@ button,
   object-fit: cover;
   border-radius: 24px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+
+  #leftMemes,
+  #rightMemes {
+    position: static;
+    transform: none;
+
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+  }
+
+  #leftMemes img,
+  #rightMemes img {
+    width: 140px;
+    height: 140px;
+    border-radius: 18px;
+  }
+
 }
