@@ -994,6 +994,12 @@ button,
     flex-wrap: wrap;
   }
 
+  #leftMemes img,
+  #rightMemes img {
+    width: 160px;
+    height: auto;
+  }
+
   /* Games — stack */
   .games-container {
     flex-direction: column;

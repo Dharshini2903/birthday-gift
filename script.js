@@ -356,7 +356,7 @@ if (scoreEl) {
   currentQ++;
 
   if (currentQ < quizData.length) {
-    setTimeout(loadQuestion, 3000); // slight delay so memes are visible
+    setTimeout(loadQuestion, 4000); // slight delay so memes are visible
   } else {
     setTimeout(showResult, 1000);
   }
